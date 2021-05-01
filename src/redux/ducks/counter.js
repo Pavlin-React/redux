@@ -10,9 +10,7 @@ export let decrement = () => ( {
 } )
 
 let initialState = {
-  count: 0,
-  name: '',
-  id: '0'
+  count: 0
 }
 
 export default ( state = initialState, action ) => {
@@ -20,7 +18,7 @@ export default ( state = initialState, action ) => {
     case INCREMENT:
       return { ...state, count: state.count + 1 }
     case DECREMENT:
-      return { ...state, count: state.count - 1 }
+      return { ...state, count: state.count + 1 }
     default:
       return state
   }

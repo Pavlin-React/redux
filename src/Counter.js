@@ -1,25 +1,30 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { useSelector } from 'react-redux'
+import { increment, decrement } from './redux/ducks/counter'
 
 
 
 
-const Counter = () => {
+const Counter = ( props ) => {
+  let { name } = props
 
-  let count = useSelector( ( state ) => state.counter.count )
   let dispatch = useDispatch()
 
-  let increment = () => {}
+  let handleIncrement = () => {
+    dispatch( increment() )
+  }
 
-  let decrement = () => {}
+  let handleDecrement = () => {
+    dispatch( decrement() )
+  }
 
   return (
     <div style={ { backgroundColor: 'grey', margin: '10px' } } >
-      <h3>Count: { count }</h3>
+      <h3>Count: </h3>
       <div style={ { display: 'flex', justifyContent: 'center' } } >
-        <button onClick={ increment }>Increment</button>
-        <button onClick={ decrement }>Decrement</button>
+        <p>{ name }</p>
+        <button onClick={ handleIncrement }>Increment</button>
+        <button onClick={ handleDecrement }>Decrement</button>
       </div>
     </div>
   )
