@@ -7,14 +7,15 @@ import { useSelector } from 'react-redux';
 function App() {
 
   let count = useSelector( ( state ) => state.counter.count )
+  let voters =['Anthony Sistilli', 'Bob Smith', 'Juji Best']
 
   return (
     <div className="App">
       <h1>Redux made easy</h1>
-      <h2>The count: { count }</h2>
-      <Counter name='Anthony Sistilli'/>
-      <Counter name='Bob Smith'/>
-      <Counter name='Juji Z'/>
+      <h2>Total count: { count }</h2>
+      {voters.map((voter) => (
+        <Counter name={ voter } />
+      ))}
     </div>
   );
 }
