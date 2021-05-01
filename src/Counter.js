@@ -1,18 +1,16 @@
 import React, { useState } from 'react'
+import { useSelector } from 'react-redux'
+
 
 
 
 const Counter = () => {
 
-  let [count, setCount] = useState( 0 )
+  let count = useSelector( ( state ) => state.counter.count )
 
-  let increment = () => {
-    setCount( count + 1 )
-  }
+  let increment = () => {}
 
-  let decrement = () => {
-    setCount( count - 1 )
-  }
+  let decrement = () => {}
 
   return (
     <div style={ { backgroundColor: 'grey', margin: '10px' } } >
