@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useDispatch } from 'react-redux'
 import { useSelector } from 'react-redux'
 
 
@@ -7,6 +8,7 @@ import { useSelector } from 'react-redux'
 const Counter = () => {
 
   let count = useSelector( ( state ) => state.counter.count )
+  let dispatch = useDispatch()
 
   let increment = () => {}
 
